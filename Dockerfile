@@ -1,13 +1,16 @@
 FROM apify/actor-node-playwright:18
 
-COPY package.json package-lock.json ./
-RUN npm ci --only=production
+# Set working directory
+WORKDIR /usr/src/app
 
-COPY . .
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm ci --only=production --silent
 
-# Do NOT create user and do NOT switch user
-# (Playwright works fine as root)
-# USER apify   ← REMOVE THIS
+# Copy the rest of the application
+COPY . ./
 
-# Optional but cleaner:
-WORKDIR /app
+# Set proper permissions for the working directory
+RUN chmod -R 755 /usr/src/app
+
+# The container should run as the default user (usually root is fine for Apify actors)

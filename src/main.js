@@ -259,33 +259,42 @@ class ZillowScraper {
 }
 
 Actor.main(async () => {
-    log.info('Zillow Pending & Under Contract Scraper started');
-    
-    const input = await Actor.getInput();
-    
-    if (!input?.searchLocation) {
-        throw new Error('Search location is required');
+    try {
+        log.info('Zillow Pending & Under Contract Scraper started');
+        
+        const input = await Actor.getInput();
+        
+        if (!input?.searchLocation) {
+            throw new Error('Search location is required');
+        }
+        
+        log.info('Input configuration:', input);
+        
+        const scraper = new ZillowScraper(input);
+        const properties = await scraper.scrapeProperties();
+        
+        log.info(`Scraped ${properties.length} pending/under contract properties`);
+        
+        // Filter results one more time to ensure we only have valid statuses
+        const filteredProperties = properties.filter(property => 
+            scraper.isValidPropertyStatus(property.listingStatus)
+        );
+        
+        log.info(`Final count after filtering: ${filteredProperties.length} properties`);
+        
+        // Save results to dataset
+        if (filteredProperties.length > 0) {
+            await Dataset.pushData(filteredProperties);
+        }
+        
+        // Also save as key-value store for easy access
+        await Actor.setValue('OUTPUT', filteredProperties);
+        
+        log.info('Scraper completed successfully');
+        
+    } catch (error) {
+        log.error(`Actor failed with error: ${error.message}`);
+        log.error('Stack trace:', error.stack);
+        throw error;
     }
-    
-    log.info('Input configuration:', input);
-    
-    const scraper = new ZillowScraper(input);
-    const properties = await scraper.scrapeProperties();
-    
-    log.info(`Scraped ${properties.length} pending/under contract properties`);
-    
-    // Filter results one more time to ensure we only have valid statuses
-    const filteredProperties = properties.filter(property => 
-        scraper.isValidPropertyStatus(property.listingStatus)
-    );
-    
-    log.info(`Final count after filtering: ${filteredProperties.length} properties`);
-    
-    // Save results to dataset
-    await Dataset.pushData(filteredProperties);
-    
-    // Also save as key-value store for easy access
-    await Actor.setValue('OUTPUT', filteredProperties);
-    
-    log.info('Scraper completed successfully');
 });
