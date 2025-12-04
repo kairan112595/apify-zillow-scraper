@@ -3,6 +3,7 @@
     "description": "Schema for properties scraped from Zillow that are in Pending or Under Contract status",
     "type": "object",
     "schemaVersion": 1,
+    "actorOutputSchemaVersion": 1,
     "properties": {
         "address": {
             "title": "Property Address",
