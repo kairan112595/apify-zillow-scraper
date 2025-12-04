@@ -1,12 +1,10 @@
 {
     "title": "Zillow Pending & Under Contract Properties",
     "description": "Schema for properties scraped from Zillow that are in Pending or Under Contract status",
-    "type": "array",
+    "type": "object",
     "schemaVersion": 1,
     "actorOutputSchemaVersion": 1,
-    "items": {
-        "type": "object",
-        "properties": {
+    "properties": {
         "address": {
             "title": "Property Address",
             "type": "string",
@@ -100,8 +98,7 @@
     },
     "required": [
         "address",
-        "listingStatus", 
+        "listingStatus",
         "scrapedAt"
     ]
-}
 }
