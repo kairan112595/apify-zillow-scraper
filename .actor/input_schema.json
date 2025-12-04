@@ -65,7 +65,7 @@
             "title": "Home Types",
             "type": "array",
             "description": "Types of homes to include",
-            "editor": "multiselect",
+            "editor": "select",
             "items": {
                 "type": "string",
                 "enum": [
