@@ -4,5 +4,6 @@ COPY package*.json ./
 RUN npm ci --only=production
 COPY . ./
 
-# The apify user should already exist in the base image
+# Create apify user with useradd (more compatible)
+RUN useradd -m -s /bin/bash apify
 USER apify
