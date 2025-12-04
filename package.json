@@ -1,0 +1,34 @@
+{
+    "name": "zillow-pending-scraper",
+    "version": "1.0.0",
+    "description": "Zillow scraper that extracts only Pending and Under Contract properties",
+    "main": "src/main.js",
+    "scripts": {
+        "start": "node src/main.js",
+        "test": "node src/test.js",
+        "test:basic": "node src/test.js basic_test",
+        "test:detailed": "node src/test.js detailed_test",
+        "test:luxury": "node src/test.js luxury_test",
+        "test:budget": "node src/test.js budget_test"
+    },
+    "dependencies": {
+        "apify": "^3.1.10",
+        "axios": "^1.6.0",
+        "cheerio": "^1.0.0-rc.12",
+        "playwright": "^1.40.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/blue-house-82/ApifyZillowScraper"
+    },
+    "keywords": [
+        "zillow",
+        "scraper",
+        "real-estate",
+        "pending",
+        "under-contract",
+        "apify"
+    ],
+    "author": "Your Name",
+    "license": "MIT"
+}

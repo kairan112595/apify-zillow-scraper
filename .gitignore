@@ -1,0 +1,11 @@
+node_modules/
+.env
+*.log
+.DS_Store
+apify_storage/
+storage/
+dist/
+.vscode/
+*.zip
+temp/
+config/

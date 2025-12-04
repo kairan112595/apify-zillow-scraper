@@ -1,0 +1,12 @@
+{
+    "actorSpecification": 1,
+    "name": "zillow-pending-scraper",
+    "title": "Zillow Pending & Under Contract Scraper",
+    "description": "Extracts only Pending and Under Contract properties from Zillow with customizable filters",
+    "version": "1.0",
+    "meta": {
+        "templateId": "node-playwright"
+    },
+    "input": "./input_schema.json",
+    "dockerfile": "./Dockerfile"
+}

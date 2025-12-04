@@ -1,0 +1,33 @@
+{
+  "basic_test": {
+    "searchLocation": "Los Angeles, CA",
+    "maxResults": 5
+  },
+  "detailed_test": {
+    "searchLocation": "Miami, FL",
+    "minPrice": 400000,
+    "maxPrice": 1200000,
+    "minBedrooms": 2,
+    "maxBedrooms": 4,
+    "minBathrooms": 2,
+    "homeTypes": ["house", "condo"],
+    "maxResults": 10,
+    "outputFormat": "json"
+  },
+  "luxury_test": {
+    "searchLocation": "Beverly Hills, CA",
+    "minPrice": 2000000,
+    "homeTypes": ["house"],
+    "minBedrooms": 4,
+    "minBathrooms": 3,
+    "maxResults": 5
+  },
+  "budget_test": {
+    "searchLocation": "Austin, TX",
+    "maxPrice": 600000,
+    "homeTypes": ["condo"],
+    "minBedrooms": 1,
+    "maxBedrooms": 2,
+    "maxResults": 8
+  }
+}
