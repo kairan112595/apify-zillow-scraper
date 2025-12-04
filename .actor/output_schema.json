@@ -1,0 +1,93 @@
+{
+    "title": "Zillow Pending & Under Contract Properties",
+    "description": "Schema for properties scraped from Zillow that are in Pending or Under Contract status",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "address": {
+            "title": "Property Address",
+            "type": "string",
+            "description": "Full address of the property",
+            "example": "123 Main St, Los Angeles, CA 90210"
+        },
+        "price": {
+            "title": "Property Price",
+            "type": "string",
+            "description": "Listed price of the property as displayed on Zillow",
+            "example": "$1,250,000"
+        },
+        "bedrooms": {
+            "title": "Number of Bedrooms",
+            "type": "integer",
+            "description": "Number of bedrooms in the property",
+            "minimum": 0,
+            "example": 3
+        },
+        "bathrooms": {
+            "title": "Number of Bathrooms",
+            "type": "number",
+            "description": "Number of bathrooms in the property",
+            "minimum": 0,
+            "example": 2.5
+        },
+        "squareFeet": {
+            "title": "Square Footage",
+            "type": "integer",
+            "description": "Total square footage of the property",
+            "minimum": 0,
+            "example": 2150
+        },
+        "propertyType": {
+            "title": "Property Type",
+            "type": "string",
+            "description": "Type of property",
+            "enum": [
+                "house",
+                "condo",
+                "townhouse",
+                "multi-family",
+                "land",
+                "manufactured"
+            ],
+            "example": "house"
+        },
+        "listingStatus": {
+            "title": "Listing Status",
+            "type": "string",
+            "description": "Current status of the property listing",
+            "enum": [
+                "pending",
+                "pending offer",
+                "under contract",
+                "contingent",
+                "contingent offer"
+            ],
+            "example": "pending"
+        },
+        "zillowPropertyId": {
+            "title": "Zillow Property ID",
+            "type": "string",
+            "description": "Unique Zillow property identifier (ZPID)",
+            "example": "123456789"
+        },
+        "listingUrl": {
+            "title": "Zillow Listing URL",
+            "type": "string",
+            "description": "Direct URL to the property listing on Zillow",
+            "format": "uri",
+            "example": "https://www.zillow.com/homedetails/123-Main-St-Los-Angeles-CA-90210/123456789_zpid/"
+        },
+        "scrapedAt": {
+            "title": "Scraped Timestamp",
+            "type": "string",
+            "description": "ISO timestamp when the property data was scraped",
+            "format": "date-time",
+            "example": "2025-12-04T10:30:00.000Z"
+        }
+    },
+    "required": [
+        "address",
+        "listingStatus",
+        "scrapedAt"
+    ]
+}
