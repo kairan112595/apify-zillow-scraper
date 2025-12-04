@@ -39,28 +39,13 @@
             "title": "Property Type",
             "type": "string",
             "description": "Type of property",
-            "template": "{{propertyType}}",
-            "enum": [
-                "house",
-                "condo",
-                "townhouse",
-                "multi-family",
-                "land",
-                "manufactured"
-            ]
+            "template": "{{propertyType}}"
         },
         "listingStatus": {
             "title": "Listing Status",
             "type": "string",
             "description": "Current status of the property listing",
-            "template": "{{listingStatus}}",
-            "enum": [
-                "pending",
-                "pending offer",
-                "under contract",
-                "contingent",
-                "contingent offer"
-            ]
+            "template": "{{listingStatus}}"
         },
         "zillowPropertyId": {
             "title": "Zillow Property ID",
