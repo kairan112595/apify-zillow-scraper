@@ -19,19 +19,19 @@
         },
         "bedrooms": {
             "title": "Number of Bedrooms",
-            "type": "integer",
+            "type": "string",
             "description": "Number of bedrooms in the property",
             "template": "{{bedrooms}}"
         },
         "bathrooms": {
             "title": "Number of Bathrooms",
-            "type": "number",
+            "type": "string",
             "description": "Number of bathrooms in the property",
             "template": "{{bathrooms}}"
         },
         "squareFeet": {
             "title": "Square Footage",
-            "type": "integer",
+            "type": "string",
             "description": "Total square footage of the property",
             "template": "{{squareFeet}}"
         },
