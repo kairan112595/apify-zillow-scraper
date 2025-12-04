@@ -21,22 +21,19 @@
             "title": "Number of Bedrooms",
             "type": "integer",
             "description": "Number of bedrooms in the property",
-            "template": "{{bedrooms}}",
-            "minimum": 0
+            "template": "{{bedrooms}}"
         },
         "bathrooms": {
             "title": "Number of Bathrooms",
             "type": "number",
             "description": "Number of bathrooms in the property",
-            "template": "{{bathrooms}}",
-            "minimum": 0
+            "template": "{{bathrooms}}"
         },
         "squareFeet": {
             "title": "Square Footage",
             "type": "integer",
             "description": "Total square footage of the property",
-            "template": "{{squareFeet}}",
-            "minimum": 0
+            "template": "{{squareFeet}}"
         },
         "propertyType": {
             "title": "Property Type",
