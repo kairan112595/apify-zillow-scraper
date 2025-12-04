@@ -1,14 +1,16 @@
 FROM apify/actor-node-playwright:18
 
 # Install deps as root
-COPY package*.json ./
+COPY package.json package-lock.json ./
 RUN npm ci --only=production
 
-# Copy source code
+# Copy code
 COPY . .
 
-# Switch to pre-existing Apify user
+# Create apify user (safe for all Debian/Ubuntu-based images)
+RUN adduser --disabled-password --gecos "" apify
+
+# Switch to the apify user
 USER apify
 
-# Important: working directory for apify user
 WORKDIR /home/apify
