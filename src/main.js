@@ -1,5 +1,5 @@
 const { Actor, log } = require('apify');
-const { PlaywrightCrawler, Dataset } = require('apify');
+const { PlaywrightCrawler } = require('crawlee');
 const { firefox } = require('playwright');
 
 const LISTING_STATUSES = {
@@ -284,7 +284,7 @@ Actor.main(async () => {
         
         // Save results to dataset
         if (filteredProperties.length > 0) {
-            await Dataset.pushData(filteredProperties);
+            await Actor.pushData(filteredProperties);
         }
         
         // Also save as key-value store for easy access
