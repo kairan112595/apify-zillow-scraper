@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 # Copy package files
 COPY package*.json ./
 
-# Install Node.js dependencies
+# Install Node.js dependencies as root first
 RUN npm install
 
 # Install Playwright browsers
@@ -21,9 +21,13 @@ RUN npx playwright install firefox
 # Copy application source
 COPY . .
 
-# Create a non-root user
-RUN groupadd -r appuser && useradd -r -g appuser appuser
-RUN chown -R appuser:appuser /app
+# Create a non-root user with proper home directory
+RUN groupadd -r appuser && useradd -r -g appuser -m -d /home/appuser appuser
+
+# Change ownership of the app directory and home directory
+RUN chown -R appuser:appuser /app /home/appuser
+
+# Switch to non-root user
 USER appuser
 
 # Expose port (if needed for debugging)
