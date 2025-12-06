@@ -10,7 +10,6 @@ function validateProject() {
         'src/test.js',
         'package.json',
         'input_schema.json',
-        'Dockerfile',
         'README.md',
         '.gitignore'
     ];

@@ -10,9 +10,10 @@ f:\ApifyZillowScraper\
 ├── src/
 │   ├── main.js                    # Main scraper logic
 │   └── test.js                    # Testing script
+├── examples/
+│   └── input-examples.md          # Example input configurations
 ├── .gitignore                     # Git ignore rules
 ├── DEPLOYMENT.md                  # Detailed deployment guide
-├── Dockerfile                     # Container configuration
 ├── input_schema.json             # Input form definition for Apify UI
 ├── package.json                   # Node.js dependencies
 ├── PROJECT_STRUCTURE.md          # This file

@@ -24,7 +24,7 @@ Copy and paste the following files into your Apify actor:
         "templateId": "node-playwright"
     },
     "input": "./input_schema.json",
-    "dockerfile": "./Dockerfile"
+    "output": "./output_schema.json"
 }
 ```
 
@@ -34,11 +34,11 @@ Copy the package.json content from the project.
 #### File: `input_schema.json`
 Copy the input_schema.json content from the project.
 
+#### File: `output_schema.json`
+Copy the output_schema.json content from the project.
+
 #### File: `src/main.js`
 Copy the main.js content from the project.
-
-#### File: `Dockerfile`
-Copy the Dockerfile content from the project.
 
 ### Step 3: Build the Actor
 1. Click "Build" button in Apify Console

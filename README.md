@@ -36,11 +36,13 @@ This scraper specifically addresses the issue where Zillow's frontend shows both
    ```
    /
    ├── .actor/
-   │   └── actor.json
+   │   ├── actor.json
+   │   ├── input_schema.json
+   │   └── output_schema.json
    ├── src/
    │   ├── main.js
    │   └── test.js
-   ├── Dockerfile
+   ├── examples/
    ├── input_schema.json
    ├── package.json
    └── README.md
